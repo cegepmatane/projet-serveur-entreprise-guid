@@ -2,4 +2,4 @@
 
 ### Contributeur :
 
-- Karl-William Couturier 
+- Karl-William

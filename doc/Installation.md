@@ -1,10 +1,10 @@
-### Procedure serveur IRC 
+# Procedure serveur IRC 
 
 - sudo apt install inspircd 
 - sudo ufw allow 6667/tcp
 - sudo ufw reload 
 
-**Panneau Porckpon**
+**Panneau Porkpon**
 
 - CNAME irc.shiftsphere.xyz
 
