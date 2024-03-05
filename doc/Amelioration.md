@@ -2,67 +2,67 @@
 
 ### Personnaliser le mot d'accueil du service
 
-cd /etc/inspircd
-sudo jed inspircd.motd 
-sudo service inspircd restart 
+- cd /etc/inspircd
+- sudo jed inspircd.motd 
+- sudo service inspircd restart 
 
-weechat
+**weechat**
 - /connect shiftsphere
 
 ### Rediriger les logs 
 
-cd /etc/inspircd
-sudo cp inspircd.conf inspircd.conf.copie-2024-02-29
-sudo jed inspircd.conf
+- cd /etc/inspircd
+- sudo cp inspircd.conf inspircd.conf.copie-2024-02-29
+- sudo jed inspircd.conf
 
-<log method="file" type ="* - USERINPUT -USEROUTPUT" level="default" target="/var/log/irc/log" flush="20">
+- <log method="file" type ="* - USERINPUT -USEROUTPUT" level="default" target="/var/log/irc/log" flush="20">
 
-cd /var/log
-sudo touch irc.log
-sudo chown irc:irc irc.log
-sudo cat inspircd.log
-sudo service inspircd restart 
+- cd /var/log
+- sudo touch irc.log
+- sudo chown irc:irc irc.log
+- sudo cat inspircd.log
+- sudo service inspircd restart 
 
 ## Connecters trois utilisateurs connue
 ### Inspircd
 
-sudo apt update
-sudo apt install atheme-services
+- sudo apt update
+- sudo apt install atheme-services
 
-sudo cp inspircd.conf inspircd.conf.copie-2024-03-05
-sudo jed inspircd.conf
+- sudo cp inspircd.conf inspircd.conf.copie-2024-03-05
+- sudo jed inspircd.conf
 
-<link name="irc.shiftsphere.xyz" ipaddr="172.105.15.81" port="7000" allowmask="172.105.1$
+- <link name="irc.shiftsphere.xyz" ipaddr="172.105.15.81" port="7000" allowmask="172.105.1$
 
-<link name="irc.shiftsphere.xyz" ipaddr="172.105.15.81" port="7000" allowmask="172.$
+- <link name="irc.shiftsphere.xyz" ipaddr="172.105.15.81" port="7000" allowmask="172.$
 
-<uline server="irc.shiftsphere.xyz" silent="yes">
+- <uline server="irc.shiftsphere.xyz" silent="yes">
 
-<bind address="172.105.15.81" port="7000" type="servers">
+- <bind address="172.105.15.81" port="7000" type="servers">
 
-<module name="spanningtree">
-<module name="alias">
-<module name="chghost">
-<module name="mlock">
-<module name="sasl">
-<sasl target="services.example.tld">
-<module name="servprotect">
-<module name="services_account">
-<module name="topiclock">
+- <module name="spanningtree">
+- <module name="alias">
+- <module name="chghost">
+- <module name="mlock">
+- <module name="sasl">
+- <sasl target="services.example.tld">
+- <module name="servprotect">
+- <module name="services_account">
+- <module name="topiclock">
 
-sudo service inspircd restart 
+- sudo service inspircd restart 
 
 ### Atheme
 
-sudo cp /usr/share/doc/atheme-services/examples/atheme.conf.example /etc/atheme/atheme.conf
+- sudo cp /usr/share/doc/atheme-services/examples/atheme.conf.example /etc/- atheme/atheme.conf
 
-sudo chmod o+r -R atheme
-sudo chmod o+x -R atheme
+- sudo chmod o+r -R atheme
+- sudo chmod o+x -R atheme
 
-sudo cp atheme.conf atheme.conf.original
+- sudo cp atheme.conf atheme.conf.original
 
-cd /etc/atheme
-sudo jed atheme.conf
+- cd /etc/atheme
+- sudo jed atheme.conf
 
 **Code rapide pour supprimer en console** 
 -ctrl shift 2
