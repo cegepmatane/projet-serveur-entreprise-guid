@@ -92,3 +92,27 @@ global {
         host = "QuebecIRC/services/Global";
 infoserv {
         host = "QuebecIRC/services/InfoServ";
+
+
+### Installer et configurer le Jeux de loup-garou 
+
+- wget https://github.com/lykoss/lykos/archive/refs/tags/stable-201905.zip
+- unzip stable-201905.zip 
+- mv lykos-stable-201905 lykos
+- cd lykos
+- python3 -m pip install -r requirements.txt
+
+- cp botconfig.py.example botconfig.py
+- jed botconfig.py
+- python3 wolfbot.py &
+
+- HOST = "irc.quebec.agency"
+- PORT = 6667
+- NICK = "botloupgarou"
+- IDENT = NICK
+- REALNAME = NICK
+- USERNAME = ""  # For authentication; can be left blank if the same as NICK.
+- PASS = "testtest" # can be None if authenticating with client certificates (see below)
+- SASL_AUTHENTICATION = False
+- USE_SSL = False
+- SSL_VERIFY = False
