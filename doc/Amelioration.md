@@ -116,3 +116,7 @@ infoserv {
 - SASL_AUTHENTICATION = False
 - USE_SSL = False
 - SSL_VERIFY = False
+
+- CHANNEL = "#cafe"
+
+- python3 wolfbot.py
