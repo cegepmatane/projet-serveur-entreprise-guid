@@ -63,20 +63,24 @@ sudo service inspircd restart
 
 ### Atheme
 
-- sudo cp /usr/share/doc/atheme-services/examples/atheme.conf.example /etc/- atheme/atheme.conf
+```bash
+sudo cp /usr/share/doc/atheme-services/examples/atheme.conf.example /etc/- atheme/atheme.conf
 
-- sudo chmod o+r -R atheme
-- sudo chmod o+x -R atheme
+sudo chmod o+r -R atheme
+sudo chmod o+x -R atheme
 
-- sudo cp atheme.conf atheme.conf.original
+sudo cp atheme.conf atheme.conf.original
 
-- cd /etc/atheme
-- sudo jed atheme.conf
+cd /etc/atheme
+sudo jed atheme.conf
+```
 
 **Code rapide pour supprimer en console** 
+
 -ctrl shift 2
 -ctrl w
 
+```bash
 serverinfo {
         name = "irc.shiftsphere.xyz";
         numeric = "5AA";
@@ -101,31 +105,33 @@ global {
         host = "QuebecIRC/services/Global";
 infoserv {
         host = "QuebecIRC/services/InfoServ";
-
+```
 
 ### Installer et configurer le Jeux de loup-garou 
 
-- wget https://github.com/lykoss/lykos/archive/refs/tags/stable-201905.zip
-- unzip stable-201905.zip 
-- mv lykos-stable-201905 lykos
-- cd lykos
-- python3 -m pip install -r requirements.txt
+```bash
+wget https://github.com/lykoss/lykos/archive/refs/tags/stable-201905.zip
+unzip stable-201905.zip 
+mv lykos-stable-201905 lykos
+cd lykos
+python3 -m pip install -r requirements.txt
 
-- cp botconfig.py.example botconfig.py
-- jed botconfig.py
-- python3 wolfbot.py &
+cp botconfig.py.example botconfig.py
+jed botconfig.py
+python3 wolfbot.py &
 
-- HOST = "irc.quebec.agency"
-- PORT = 6667
-- NICK = "botloupgarou"
-- IDENT = NICK
-- REALNAME = NICK
-- USERNAME = ""  # For authentication; can be left blank if the same as NICK.
-- PASS = "testtest" # can be None if authenticating with client certificates (see below)
-- SASL_AUTHENTICATION = False
-- USE_SSL = False
-- SSL_VERIFY = False
+HOST = "irc.quebec.agency"
+PORT = 6667
+NICK = "botloupgarou"
+IDENT = NICK
+REALNAME = NICK
+USERNAME = ""  # For authentication; can be left blank if the same as NICK.
+PASS = "testtest" # can be None if authenticating with client certificates (see below)
+SASL_AUTHENTICATION = False
+USE_SSL = False
+SSL_VERIFY = False
 
-- CHANNEL = "#cafe"
+CHANNEL = "#cafe"
 
-- python3 wolfbot.py
+python3 wolfbot.py
+```
